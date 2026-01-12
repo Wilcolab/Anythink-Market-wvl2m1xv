@@ -1,3 +1,5 @@
+const { exponent } = require('./helpers'); // adjust path if needed
+
 describe('Arithmetic', function () {
     describe('Validation', function () {
         it('rejects missing operation', function (done) {
@@ -205,4 +207,45 @@ describe('Arithmetic', function () {
                 });
         });
     });
+});
+// Tests for the power (^) function
+
+describe('Exponential Function Tests', () => {
+  
+  // Normal cases
+ describe('Exponential Function Tests', function() {
+
+  it('2 ^ 3 should return 8', function() {
+    expect(exponent(2, 3)).to.eql(8);
+  });
+
+  it('5 ^ 0 should return 1', function() {
+    expect(exponent(5, 0)).to.eql(1);
+  });
+
+  it('3 ^ 2 should return 9', function() {
+    expect(exponent(3, 2)).to.eql(9);
+  });
+
+  it('0 ^ 5 should return 0', function() {
+    expect(exponent(0, 5)).to.eql(0);
+  });
+
+  it('1 ^ 100 should return 1', function() {
+    expect(exponent(1, 100)).to.eql(1);
+  });
+
+  it('2 ^ -3 should return 0.125', function() {
+    expect(exponent(2, -3)).to.be.closeTo(0.125, 0.0001);
+  });
+
+  it('Non-numeric base should throw error', function() {
+    expect(() => exponent('a', 2)).to.throw();
+  });
+
+  it('Non-numeric exponent should throw error', function() {
+    expect(() => exponent(2, 'b')).to.throw();
+  });
+
+});
 });
