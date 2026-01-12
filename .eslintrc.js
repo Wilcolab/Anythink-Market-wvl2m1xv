@@ -15,3 +15,5 @@ module.exports = {
     "rules": {
     }
 }
+
+function add(a, b) {
